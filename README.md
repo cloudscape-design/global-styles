@@ -1,11 +1,7 @@
-## My Project
+## Cloudscape Global Styles
+This package provides global styles and fonts for the Cloudscape components.
 
-TODO: Fill this README out!
-
-Be sure to:
-
-* Change the title in this README
-* Edit your repository description on GitHub
+It provides the Open Sans font, and corresponding global typography styles.
 
 ## Security
 
