@@ -1,0 +1,40 @@
+# This workflow releases the current package to a dedicated private CodeArtifact repository.
+# One repository may publish more than one package. For more details refer to the release-package Action.
+name: release
+
+on:
+  push:
+    branches: main
+  workflow_call:
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_CODEARTIFACT_ROLE }}
+          aws-region: us-west-2
+      - name: Login and configure codeartifact
+        run: |
+          aws codeartifact login --tool npm --repository ${{ secrets.CODE_ARTIFACT_REPO }} --domain ${{ secrets.CODE_ARTIFACT_DOMAIN }} --domain-owner ${{ secrets.AWS_ACCOUNT_ID }} --region us-west-2 --namespace @cloudscape-design
+
+      - run: npm ci
+
+      - name: Restore locally modified files
+        run: git restore .
+
+      - run: npm run build
+      - run: npm run test
+
+      - name: Release package to private CodeArtifact
+        uses: ./.github/actions/release-package
