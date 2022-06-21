@@ -60,11 +60,3 @@
   font-style: italic;
   src: url('./fonts/open-sans-v27-latin-800italic.woff2') format('woff2');
 }
-
-/* Set 1rem size to 10px but keep the default font size the same */
-html {
-  font-size: 0.625rem;
-}
-body {
-  font-size: 1.4rem;
-}
