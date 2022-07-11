@@ -1,6 +1,11 @@
 {
   "name": "@cloudscape-design/global-styles",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloudscape-design/global-styles.git"
+  },
+  "homepage": "https://cloudscape.design",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./dist/index.js",
