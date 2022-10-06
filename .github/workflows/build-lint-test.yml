@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - main
+      - test-commit-hook
   push:
     branches:
       - main
@@ -15,4 +16,4 @@ permissions:
 
 jobs:
   build:
-    uses: cloudscape-design/.github/.github/workflows/build-lint-test.yml@main
+    uses: cloudscape-design/.github/.github/workflows/build-lint-test.yml@commit-hook
