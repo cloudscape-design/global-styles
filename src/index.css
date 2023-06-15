@@ -61,6 +61,8 @@
   src: url('./fonts/open-sans-v27-latin-800italic.woff2') format('woff2');
 }
 
-.awsui-dark-mode {
-  color-scheme: dark;
+@media not print {
+  .awsui-dark-mode {
+    color-scheme: dark;
+  }
 }
