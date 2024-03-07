@@ -8,21 +8,17 @@
   "homepage": "https://cloudscape.design",
   "license": "Apache-2.0",
   "type": "module",
-  "main": "./dist/index.js",
+  "main": "./index.js",
   "exports": {
-    ".": "./dist/index.js",
+    ".": "./index.js",
     "./dark-mode-utils.css": "./dark-mode-utils.css",
     "./index.css": "./index.css"
   },
-  "files": [
-    "dist",
-    "index.css",
-    "dark-mode-utils.css",
-    "THIRD_PARTY_LICENSES.txt"
-  ],
   "scripts": {
     "prepare": "husky",
+    "prebuild": "rm -rf lib && mkdir lib",
     "build": "node postcss.js && tsc",
+    "postbuild": "cp dark-mode-utils.css package.json THIRD-PARTY-LICENSES.txt LICENSE README.md lib",
     "lint": "eslint .",
     "test": "jest --coverage"
   },
