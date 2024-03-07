@@ -6,7 +6,7 @@ import postcssUrl from 'postcss-url';
 import postcssImport from 'postcss-import';
 
 const input = 'src/index.css';
-const output = 'index.css';
+const output = 'lib/index.css';
 
 async function convert() {
   const css = fs.readFileSync(input);

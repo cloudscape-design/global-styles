@@ -7,7 +7,7 @@
     "moduleResolution": "Node",
     "strict": true,
     "declaration": true,
-    "outDir": "dist"
+    "outDir": "lib"
   },
   "include": ["src/**/*.ts"],
   "exclude": ["**/__tests__/**"]
