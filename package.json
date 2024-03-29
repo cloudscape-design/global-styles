@@ -14,6 +14,12 @@
     "./dark-mode-utils.css": "./dark-mode-utils.css",
     "./index.css": "./index.css"
   },
+  "files": [
+    "*.js",
+    "*.d.ts",
+    "*.css",
+    "THIRD-PARTY-LICENSES.txt"
+  ],
   "scripts": {
     "prepare": "husky",
     "prebuild": "rm -rf lib && mkdir lib",
