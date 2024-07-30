@@ -8,5 +8,5 @@ on:
       - synchronize
 
 jobs:
-  dry-run:
+  lint-pr:
     uses: cloudscape-design/actions/.github/workflows/lint-pr.yml@main
