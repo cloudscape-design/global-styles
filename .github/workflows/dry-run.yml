@@ -6,7 +6,7 @@ on:
   pull_request:
     branches:
       - main
-      
+
 jobs:
   dry-run:
     uses: cloudscape-design/actions/.github/workflows/dry-run.yml@main
