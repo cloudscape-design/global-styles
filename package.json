@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/cloudscape-design/global-styles.git"
   },
-  "homepage": "https://cloudscape.design",
+  "homepage": "https://cloudscape.desig",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./index.js",
