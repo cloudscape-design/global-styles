@@ -1,5 +1,6 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
+import { test, expect, beforeEach, afterEach } from 'vitest';
 import { disableMotion } from '../index';
 
 let originalClassName: string;
