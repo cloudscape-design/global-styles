@@ -23,12 +23,17 @@ function toggleClass(target: Element, className: string, enabled: boolean) {
   }
 }
 
-export function applyMode(mode: Mode | null, target: Element = document.body): void {
+export function applyMode(mode: Mode | null, target?: Element): void {
   if (mode && !hasValue(Mode, mode)) {
     console.warn(`Mode "${mode}" is not supported`);
     return;
   }
-  toggleClass(target, 'awsui-dark-mode', mode === Mode.Dark);
+  if (target) {
+    toggleClass(target, 'awsui-dark-mode', mode === Mode.Dark);
+  } else {
+    applyMode(mode, document.body)
+    applyMode(mode, document.documentElement)
+  }
 }
 
 export function applyDensity(density: Density | null, target: Element = document.body): void {
