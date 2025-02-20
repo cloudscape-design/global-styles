@@ -1,6 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
-import fs from 'fs';
+import fs from 'node:fs';
+import process from 'node:process';
 import postcss from 'postcss';
 import postcssUrl from 'postcss-url';
 import postcssImport from 'postcss-import';
