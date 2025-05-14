@@ -24,7 +24,7 @@
     "prepare": "husky",
     "prebuild": "rm -rf lib && mkdir lib",
     "build": "node postcss.js && tsc",
-    "postbuild": "cp dark-mode-utils.css package.json THIRD-PARTY-LICENSES.txt LICENSE README.md lib",
+    "postbuild": "cp dark-mode-utils.css package.json THIRD-PARTY-LICENSES.txt LICENSE NOTICE README.md lib",
     "lint": "eslint .",
     "test": "vitest --run"
   },
