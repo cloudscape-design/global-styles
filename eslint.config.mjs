@@ -6,10 +6,7 @@ import { includeIgnoreFile } from '@eslint/compat';
 import tseslint from 'typescript-eslint';
 import eslintPrettier from 'eslint-plugin-prettier/recommended';
 import unicornPlugin from 'eslint-plugin-unicorn';
-import headerPlugin from 'eslint-plugin-header';
-
-// https://github.com/Stuk/eslint-plugin-header/issues/57
-headerPlugin.rules.header.meta.schema = false;
+import headerPlugin from '@tony.ganchev/eslint-plugin-header';
 
 export default tseslint.config(
   includeIgnoreFile(path.resolve('.gitignore')),
