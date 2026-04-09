@@ -13,4 +13,13 @@ export default defineConfig({
       exclude: ['**/*.md'],
     },
   },
+  build: {
+    outDir: 'lib',
+    cssMinify: false,
+    assetsInlineLimit: Infinity,
+    rollupOptions: {
+      input: 'src/index.css',
+      output: { assetFileNames: '[name][extname]' },
+    },
+  },
 });
