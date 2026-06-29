@@ -10,6 +10,18 @@ export enum Density {
   Compact = 'compact',
 }
 
+export enum Theme {
+  Default = 'default',
+  VisualRefresh = 'visual-refresh',
+  OneTheme = 'one-theme',
+}
+
+const themeClassNames: Record<Theme, string> = {
+  [Theme.Default]: '',
+  [Theme.VisualRefresh]: 'awsui-visual-refresh',
+  [Theme.OneTheme]: 'awsui-one-theme',
+};
+
 function hasValue<T extends Record<string, string>>(allValues: T, mode: T[keyof T]) {
   return Object.keys(allValues).some(key => allValues[key] === mode);
 }
@@ -37,6 +49,19 @@ export function applyDensity(density: Density | null, target: Element = document
     return;
   }
   toggleClass(target, 'awsui-compact-mode', density === Density.Compact);
+}
+
+export function applyTheme(theme: Theme | null, target: Element = document.body): void {
+  if (theme && !hasValue(Theme, theme)) {
+    console.warn(`Theme "${theme}" is not supported`);
+    return;
+  }
+  for (const themeValue of Object.keys(themeClassNames) as Theme[]) {
+    const className = themeClassNames[themeValue];
+    if (className) {
+      toggleClass(target, className, theme === themeValue);
+    }
+  }
 }
 
 export function disableMotion(disabled: boolean, target: Element = document.body): void {
