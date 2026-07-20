@@ -50,11 +50,11 @@ test('does not apply a non-existing theme', () => {
   expect(document.body).not.toHaveClass('awsui-one-theme');
 });
 
-test('does not interfere with mode/density classes', () => {
-  document.body.classList.add('awsui-dark-mode', 'awsui-compact-mode');
+test('does not interfere with mode/density or unrelated classes', () => {
+  document.body.classList.add('awsui-dark-mode', 'awsui-compact-mode', 'custom-class');
   applyTheme(Theme.OneTheme);
-  expect(document.body).toHaveClass('awsui-dark-mode', 'awsui-compact-mode', 'awsui-one-theme');
+  expect(document.body).toHaveClass('awsui-dark-mode', 'awsui-compact-mode', 'custom-class', 'awsui-one-theme');
   applyTheme(Theme.Default);
-  expect(document.body).toHaveClass('awsui-dark-mode', 'awsui-compact-mode');
+  expect(document.body).toHaveClass('awsui-dark-mode', 'awsui-compact-mode', 'custom-class');
   expect(document.body).not.toHaveClass('awsui-one-theme');
 });
