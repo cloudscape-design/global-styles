@@ -1,5 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
+
+// Keep in sync with the app-mode types in @cloudscape-design/build-tools
 export enum Mode {
   Light = 'light',
   Dark = 'dark',
