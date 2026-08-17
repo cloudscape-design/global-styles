@@ -53,7 +53,7 @@ export function applyDensity(density: Density | null, target: Element = document
   toggleClass(target, 'awsui-compact-mode', density === Density.Compact);
 }
 
-export function applyTheme(theme: Theme | null, target: Element = document.body): void {
+export function setThemeClass(theme: Theme | null, target: Element = document.body): void {
   if (theme && !hasValue(Theme, theme)) {
     console.warn(`Theme "${theme}" is not supported`);
     return;
@@ -64,6 +64,16 @@ export function applyTheme(theme: Theme | null, target: Element = document.body)
       toggleClass(target, className, theme === themeValue);
     }
   }
+}
+
+/**
+ * @deprecated Renamed to {@link setThemeClass} to avoid a name collision with
+ * the unrelated `applyTheme` exported by `@cloudscape-design/theming-core`.
+ * Migrate to `setThemeClass`; this alias will be removed once all consumers
+ * have been updated.
+ */
+export function applyTheme(theme: Theme | null, target: Element = document.body): void {
+  setThemeClass(theme, target);
 }
 
 export function disableMotion(disabled: boolean, target: Element = document.body): void {
