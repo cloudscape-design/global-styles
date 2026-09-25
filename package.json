@@ -12,7 +12,8 @@
   "exports": {
     ".": "./index.js",
     "./dark-mode-utils.css": "./dark-mode-utils.css",
-    "./index.css": "./index.css"
+    "./index.css": "./index.css",
+    "./index-base.css": "./index-base.css"
   },
   "files": [
     "*.js",

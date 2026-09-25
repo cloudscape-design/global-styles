@@ -1,0 +1,10 @@
+@media not print {
+  .awsui-dark-mode {
+    color-scheme: dark;
+  }
+
+  /* This is necessary for Chrome to apply dark mode to page-level scrollbars  */
+  html:has(body.awsui-dark-mode) {
+    color-scheme: dark;
+  }
+}

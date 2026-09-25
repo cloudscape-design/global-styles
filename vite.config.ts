@@ -18,7 +18,7 @@ export default defineConfig({
     cssMinify: false,
     assetsInlineLimit: Infinity,
     rollupOptions: {
-      input: 'src/index.css',
+      input: ['src/index.css', 'src/index-base.css', 'src/fonts.css'],
       output: { assetFileNames: '[name][extname]' },
     },
   },
