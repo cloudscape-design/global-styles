@@ -3,5 +3,4 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 @import "normalize.css";
-@import "./partials/fonts.css";
 @import "./partials/dark-mode.css";
